@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ config('app.name') }}</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+  <nav class="my-navbar">
+    <a class="my-navbar-brand" href="/">{{ config('app.name') }}</a>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4">
+        <nav class="panel panel-default">
+          <div class="panel-heading">科目
+            <a href="#">
+               <span class="glyphicon glyphicon-plus color" aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="list-group">
+            @foreach($subjects as $subject)
+              <a 
+              href="{{ route('reports.index', ['id' => $subject->id]) }}" 
+              class="list-group-item {{ $current_subject_id === $subject->id ? 'active' : ''}}" 
+              >
+                {{ $subject->title }}
+              </a>
+            @endforeach
+          </div>
+        </nav>
+      </div>
+      <div class="column col-md-8">
+        <!-- ここにタスクが表示される -->
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
