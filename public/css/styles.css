@@ -71,3 +71,17 @@ span.color {
     color: #ffffff;
     float: right;
 }
+
+tr {
+  color: #b8b2d6;
+}
+span.label-danger{
+  background-color: #d5848b;
+}
+span.label-warning {
+  background-color:#b1d7e4;
+}
+span.label-success {
+  background-color: #bcccd9;
+
+}
