@@ -62,7 +62,9 @@
                     <span class="label {{ $report->status_class }}">{{ $report->status_label}}</span>
                   </td>
                   <td>{{ $report->formatted_due_date }}</td>
-                  <td><a href="#">編集</a></td>
+                  <td>            <a href="#">
+               <span class="glyphicon glyphicon-pencil color-edit" aria-hidden="true"></span>
+            </a></td>
                 </tr>
               @endforeach
             </tbody>

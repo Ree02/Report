@@ -71,6 +71,10 @@ span.color {
     color: #ffffff;
     float: right;
 }
+span.color-edit { 
+  color: #b8b2d6;
+}
+
 
 tr {
   color: #b8b2d6;
