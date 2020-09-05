@@ -61,7 +61,7 @@
                   <td>
                     <span class="label {{ $report->status_class }}">{{ $report->status_label}}</span>
                   </td>
-                  <td>{{ $report->due_date }}</td>
+                  <td>{{ $report->formatted_due_date }}</td>
                   <td><a href="#">編集</a></td>
                 </tr>
               @endforeach

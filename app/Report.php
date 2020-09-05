@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Report extends Model
 {
@@ -41,4 +42,10 @@ class Report extends Model
         return self::STATUS[$status]['class'];
     }
 
-}
+     //日付の表示方式変更
+     public function getFormattedDueDateAttribute()
+     {
+         return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])
+            ->format('Y/m/d');
+     }    
+ }
