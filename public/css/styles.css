@@ -52,15 +52,19 @@ a.my-navbar-item:hover {
     background-color: #b8b2d6;
     color: #ffffff;
 }
+a.list-group-item {
+  color: #b8b2d6;
+}
 
 a.list-group-item:hover {
-    background-color: #e8e6f3;
+    background-color: #ffffff;
+    color: #b8b2d6;
 }
 a.list-group-item.active,
 a.list-group-item.active:hover {
-    background-color:#EFEFEF;
+    background-color:#e8e6f3;
     border: 0;
-    color: #000000;
+    color: #b8b2d6;
 }
 
 span.color { 
