@@ -36,7 +36,38 @@
         </nav>
       </div>
       <div class="column col-md-8">
-        <!-- ここにタスクが表示される -->
+      <div class="panel panel-default">
+        <div class="panel-heading">タスク
+          <a href="#">
+            <span class="glyphicon glyphicon-plus color" aria-hidden="true"></span>
+          </a>
+        </div>
+          <div class="panel-body">
+            <div class="text-right">
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th>状態</th>
+                <th>期限</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($reports as $report)
+                <tr>
+                  <td>{{ $report->title }}</td>
+                  <td>
+                    <span class="label">{{ $report->status }}</span>
+                  </td>
+                  <td>{{ $report->due_date }}</td>
+                  <td><a href="#">編集</a></td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
