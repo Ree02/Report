@@ -37,7 +37,7 @@
       </div>
       <div class="column col-md-8">
       <div class="panel panel-default">
-        <div class="panel-heading">タスク
+        <div class="panel-heading">課題
           <a href="#">
             <span class="glyphicon glyphicon-plus color" aria-hidden="true"></span>
           </a>
