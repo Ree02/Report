@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Subject extends Model
 {
     use SoftDeletes;
+
+    public function reports()
+    {
+        return $this->hasMany('App\Report', 'subject_id', 'id');
+    }
 }

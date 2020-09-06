@@ -17,7 +17,7 @@ class ReportController extends Controller
         $current_subject = Subject::find($id);
 
         //選ばれたフォルダに紐づくタスクを取得
-        $reports = Report::where('subject_id', $current_subject->id)->get();
+        $reports = $current_subject->reports()->get();
 
         return view('reports/index', [
             'subjects' => $subjects,
