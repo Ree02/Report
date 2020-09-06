@@ -19,7 +19,7 @@
       <div class="col col-md-4">
         <nav class="panel panel-default">
           <div class="panel-heading">科目
-            <a href="#">
+            <a href="{{ route('subjects.create') }}">
                <span class="glyphicon glyphicon-plus color" aria-hidden="true"></span>
             </a>
           </div>

@@ -19,3 +19,8 @@ Route::get('/', function () {
 
 //課題一覧ページ
 Route::get('/subject/{id}/reports', 'ReportController@index')->name('reports.index');
+
+//科目作成ページ
+Route::get('/subjects/create', 'SubjectController@showCreateFrom')->name('subjects.create');
+//科目作成フォーム
+Route::post('/subjects/create', 'SubjectController@create');
