@@ -38,7 +38,8 @@ class ReportController extends Controller
         $current_subject = Subject::find($id);
 
         $report = new Report();
-        $report->titile = $request->title;
+        $report->title = $request->title;
+        $report->detail = $request->detail;
         $report->due_date = $request->due_date;
 
         $current_subject->reports()->save($report);

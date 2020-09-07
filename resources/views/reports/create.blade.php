@@ -26,9 +26,14 @@
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" autocomplete="off" />
               </div>
               <div class="form-group">
+                <label for="title">詳細</label>
+                <input type="text" class="form-control" name="detail" id="detail" value="{{ old('detail') }}" autocomplete="off" />
+              </div>
+
+              <div class="form-group">
                 <label for="title">期限日</label>
                 <div class='input-group date' id='datetimepicker1'>
-                  <input type='text' class="form-control" />
+                  <input type='text' class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}" />
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>

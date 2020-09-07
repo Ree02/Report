@@ -26,7 +26,7 @@ class CreateReport extends FormRequest
         return [
             'title' => 'required|max:20',
             'detail' => 'max:100',
-            'due_data' => 'required|data|after_of_equal:today',
+            'due_date' => 'required|date|after_or_equal:today',
         ];
     }
 
@@ -41,7 +41,7 @@ class CreateReport extends FormRequest
     public function messages()
     {
         return [
-            'due_date.after_of_equal' => ':attrubuteには今日以降の日付を入力してください',
+            'due_date.after_or_equal' => ':attributeには今日以降の日付を入力してください',
         ];
     }
 }
