@@ -12,32 +12,44 @@
         <nav class="panel panel-default">
           <div class="panel-heading">課題を追加する</div>
           <div class="panel-body">
-            @if($errors->any())
-              <div class="alert alert-danger">
-                @foreach($errors->all() as $message)
-                  <p>{{ $message }}</p>
-                @endforeach
-              </div>
-            @endif
             <form action="{{ route('reports.create', ['id' => $subject_id]) }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="title">タイトル</label>
+                @if($errors->has('title'))
+                  @foreach($errors->get('title') as $message)
+                    <div class="alert-message">
+                      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                        {{ $message }}<br>
+                    </div>
+			            @endforeach
+                 @endif
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" autocomplete="off" />
               </div>
               <div class="form-group">
-                <label for="title">詳細</label>
-                <input type="text" class="form-control" name="detail" id="detail" value="{{ old('detail') }}" autocomplete="off" />
-              </div>
-
-              <div class="form-group">
                 <label for="title">期限日</label>
+                @if($errors->has('due_date'))
+                    <div class="alert-message">
+                      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                        {{ $errors->first('due_date') }}<br>
+                    </div>
+                 @endif
                 <div class='input-group date' id='datetimepicker1'>
-                  <input type='text' class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}" />
+                  <input type='text' class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}" autocomplete="off" />
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
+              </div>
+              <div class="form-group">
+                <label for="title">詳細</label>
+                @if($errors->has('detail'))
+                    <div class="alert-message">
+                      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                        {{ $errors->first('detail') }}<br>
+                    </div>
+                 @endif
+                <textarea class="form-control" name="detail" id="detail" value="{{ old('detail') }}" autocomplete="off" cols="25" rows="4"/></textarea>
               </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-ok">OK</button>

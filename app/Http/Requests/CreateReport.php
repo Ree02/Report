@@ -34,6 +34,7 @@ class CreateReport extends FormRequest
     {
         return [
             'title' => 'タイトル',
+            'detail' => '詳細',
             'due_date' => '期限日',
         ];
     }
