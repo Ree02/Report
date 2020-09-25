@@ -11,14 +11,12 @@
                 @csrf
                 <div class="form-group">
                   <label for="title">科目名 </label>
-                   @if($errors->any())
-                     <div class="alert-message">
-                      @foreach($errors->all() as $message)
-                        <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
-                        {{ $message }}
-                      @endforeach
-                    </div>
-                   @endif
+                   @error('title')
+                   <div class="alert-message">
+                     <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                     {{$message}}
+                   </div>
+                 @enderror
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" autocomplete="off" />
                 </div>
                 <div class="text-right">
