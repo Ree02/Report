@@ -35,7 +35,7 @@
                     </div>
                  @endif
                 <div class='input-group date' id='datetimepicker1'>
-                  <input type='text' class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}" autocomplete="off" />
+                  <input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}" autocomplete="off" />
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -49,7 +49,7 @@
                         {{ $errors->first('detail') }}<br>
                     </div>
                  @endif
-                <textarea class="form-control" name="detail" id="detail" value="{{ old('detail') }}" autocomplete="off" cols="25" rows="4"/></textarea>
+                <textarea class="form-control" name="detail" id="detail" autocomplete="off" cols="25" rows="4"/>{{ old('detail') }}</textarea>
               </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-ok">OK</button>
