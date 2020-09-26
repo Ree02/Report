@@ -29,3 +29,5 @@ Route::post('/subjects/create', 'SubjectController@create');
 Route::get('subjects/{id}/report/create', 'ReportController@showCreateForm')->name('reports.create');
 //課題作成フォーム
 Route::post('subjects/{id}/report/create', 'ReportController@create');
+//課題編集ページ
+Route::get('subjects/{id}/report/{report_id}/edit', 'ReportController@showEditForm')->name('reports.edit');

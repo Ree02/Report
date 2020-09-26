@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Subject;
 use App\Report;
 use App\Http\Requests\CreateReport;
+use App\Http\Requests\EditReport;
 
 class ReportController extends Controller
 {
@@ -46,6 +47,17 @@ class ReportController extends Controller
 
         return redirect()->route('reports.index', [
             'id' => $current_subject->id,
+        ]);
+    }
+    public function showEditForm(int $id, int $report_id){
+        //選ばれた科目を取得
+        $current_subject = Subject::find($id);
+        //選ばれた課題を取得
+        $reports = $current_subject->reports($report_id)->get();
+
+        return view('reports/edit', [
+            'subject_id' => $id,
+            'reports' => $reports,
         ]);
     }
 }

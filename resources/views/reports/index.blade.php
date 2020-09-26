@@ -46,7 +46,7 @@
               @foreach($reports as $report)
                 <tr>
                   <td>
-                    {{ $report->title }}
+                  {{ $report->id }}. {{ $report->title }}
                   </td>
                   <td>
                   {{ $report->detail }}
@@ -56,7 +56,7 @@
                   </td>
                   <td>{{ $report->formatted_due_date }}</td>
                   <td>
-                    <a href="#">
+                    <a href="{{ route('reports.edit', ['id' => $current_subject_id, 'report_id' => $report->id]) }}">
                       <span class="glyphicon glyphicon-pencil color-edit" aria-hidden="true"></span>
                     </a>
                   </td>

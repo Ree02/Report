@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subject;
-use App\Http\Requests\CreateFolder;
 use App\Http\Requests\CreateSubject;
 
 class SubjectController extends Controller
