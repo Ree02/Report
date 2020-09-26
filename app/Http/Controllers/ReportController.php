@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Subject;
 use App\Report;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\CreateReport;
 use App\Http\Requests\EditReport;
 
@@ -53,11 +54,11 @@ class ReportController extends Controller
         //選ばれた科目を取得
         $current_subject = Subject::find($id);
         //選ばれた課題を取得
-        $reports = $current_subject->reports($report_id)->get();
+        $report = DB::table('reports')->where('subject_id', $id)->where('id', $report_id)->get();
 
         return view('reports/edit', [
             'subject_id' => $id,
-            'reports' => $reports,
+            'report' => $report,
         ]);
     }
 }

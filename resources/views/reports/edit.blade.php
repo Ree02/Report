@@ -14,6 +14,7 @@
           <div class="panel-body">
               @csrf
               <div class="form-group">
+                @foreach ($report as $report)
                 <label for="title">タイトル</label>
                  @error('title')
                    <div class="alert-message">
@@ -21,7 +22,7 @@
                      {{$message}}
                    </div>
                  @enderror
-                <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" autocomplete="off" />
+                <input type="text" class="form-control" name="title" id="title" value="{{ $report->title }}" autocomplete="off" />
               </div>
               <div class="form-group">
                 <label for="title">期日</label>
@@ -32,7 +33,7 @@
                    </div>
                  @enderror
                 <div class='input-group date' id='datetimepicker1'>
-                  <input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date') }}" autocomplete="off" />
+                  <input type="text" class="form-control" name="due_date" id="due_date" value="{{ $report->due_date }}" autocomplete="off" />
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -46,8 +47,9 @@
                      {{$message}}
                    </div>
                  @enderror
-                <textarea class="form-control" name="detail" id="detail" autocomplete="off" cols="25" rows="4"/>{{ old('detail') }}</textarea>
+                <textarea class="form-control" name="detail" id="detail" autocomplete="off" cols="25" rows="4"/>{{ $report->detail }}</textarea>
               </div>
+              @endforeach
               <div class="text-right">
                 <button type="submit" class="btn btn-ok">OK</button>
               </div>
