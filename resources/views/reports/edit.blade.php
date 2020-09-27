@@ -12,6 +12,7 @@
         <nav class="panel panel-default">
           <div class="panel-heading">課題を編集する</div>
           <div class="panel-body">
+            <form action = "{{ route('reports.edit', ['id' => $report->subject_id, 'report_id' => $report->id]) }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="title">タイトル</label>

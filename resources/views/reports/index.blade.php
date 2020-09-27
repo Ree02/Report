@@ -56,7 +56,7 @@
                   </td>
                   <td>{{ $report->formatted_due_date }}</td>
                   <td>
-                    <a href="{{ route('reports.edit', ['id' => $current_subject_id, 'report_id' => $report->id]) }}">
+                    <a href="{{ route('reports.edit', ['id' => $report->subject_id, 'report_id' => $report->id]) }}">
                       <span class="glyphicon glyphicon-pencil color-edit" aria-hidden="true"></span>
                     </a>
                   </td>

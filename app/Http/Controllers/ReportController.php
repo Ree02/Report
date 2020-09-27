@@ -59,4 +59,21 @@ class ReportController extends Controller
             'report' => $report,
         ]);
     }
-}
+
+    public function edit(int $id, int $report_id, EditReport $request)
+    {
+        // 指定したレポートのレコードを取得
+        $report = Report::find($report_id);
+    
+        // 入力した値に書き換え
+        $report->title = $request->title;
+        $report->status = $request->status;
+        $report->due_date = $request->due_date;
+        $report->detail = $request->detail;
+        //入力した値に更新
+        $report->save();
+    
+        return redirect()->route('reports.index', [
+            'id'=> $report->subject_id,
+        ]);
+    }}
