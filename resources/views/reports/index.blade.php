@@ -46,7 +46,7 @@
               @foreach($reports as $report)
                 <tr>
                   <td>
-                  {{ $report->id }}. {{ $report->title }}
+                  {{ $report->title }}
                   </td>
                   <td>
                   {{ $report->detail }}

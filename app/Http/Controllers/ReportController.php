@@ -50,14 +50,12 @@ class ReportController extends Controller
             'id' => $current_subject->id,
         ]);
     }
+
     public function showEditForm(int $id, int $report_id){
-        //選ばれた科目を取得
-        $current_subject = Subject::find($id);
         //選ばれた課題を取得
-        $report = DB::table('reports')->where('subject_id', $id)->where('id', $report_id)->get();
+        $report = Report::find($report_id);
 
         return view('reports/edit', [
-            'subject_id' => $id,
             'report' => $report,
         ]);
     }

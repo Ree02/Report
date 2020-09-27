@@ -26,8 +26,8 @@ Route::get('/subjects/create', 'SubjectController@showCreateFrom')->name('subjec
 Route::post('/subjects/create', 'SubjectController@create');
 
 //課題作成ページ
-Route::get('subjects/{id}/report/create', 'ReportController@showCreateForm')->name('reports.create');
+Route::get('/subjects/{id}/report/create', 'ReportController@showCreateForm')->name('reports.create');
 //課題作成フォーム
-Route::post('subjects/{id}/report/create', 'ReportController@create');
+Route::post('/subjects/{id}/report/create', 'ReportController@create');
 //課題編集ページ
-Route::get('subjects/{id}/report/{report_id}/edit', 'ReportController@showEditForm')->name('reports.edit');
+Route::get('/subjects/{id}/report/{report_id}/edit', 'ReportController@showEditForm')->name('reports.edit');
