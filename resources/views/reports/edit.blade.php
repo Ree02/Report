@@ -24,6 +24,19 @@
                 <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $report->title) }}" autocomplete="off" />
               </div>
               <div class="form-group">
+                <label for="status">状態</label>
+                <select name="status" id="status" class="form-control">
+                  @foreach(\App\Report::STATUS as $key => $val)
+                    <option
+                        value="{{ $key }}"
+                        {{ $key == old('status', $report->status) ? 'selected' : '' }}
+                    >
+                      {{ $val['label'] }}
+                    </option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="title">期日</label>
                  @error('due_date')
                    <div class="alert-message">
