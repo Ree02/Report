@@ -63,7 +63,8 @@
                 <textarea class="form-control" name="detail" id="detail" autocomplete="off" cols="25" rows="4"/>{{ old('detail', $report->detail) }}</textarea>
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-ok">OK</button>
+                <button type="submit" class="btn btn-ok" name="delete">削除</button>
+                <button type="submit" class="btn btn-ok" name="send">確定</button>
               </div>
             </form>
           </div>

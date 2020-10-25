@@ -64,16 +64,26 @@ class ReportController extends Controller
     {
         // 指定したレポートのレコードを取得
         $report = Report::find($report_id);
-    
-        // 入力した値に書き換え
-        $report->title = $request->title;
-        $report->status = $request->status;
-        $report->due_date = $request->due_date;
-        $report->detail = $request->detail;
-        //入力した値に更新
-        $report->save();
-    
+
+        // 「確定」ボタン押下時の処理
+        if($request->has("send")){
+            // 入力した値に書き換え
+            $report->title = $request->title;
+            $report->status = $request->status;
+            $report->due_date = $request->due_date;
+            $report->detail = $request->detail;
+            
+            //入力した値に更新
+            $report->save();
+        }
+        
+        // 「削除」ボタン押下時の処理
+        elseif($request->has("delete")){
+            $report->delete();
+        }
+
         return redirect()->route('reports.index', [
             'id'=> $report->subject_id,
         ]);
-    }}
+    }
+}
