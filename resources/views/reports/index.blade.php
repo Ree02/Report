@@ -39,21 +39,15 @@
                 <th>詳細</th>
                 <th>状態</th>
                 <th>期限</th>
-                <th></th>
+                <th>    </th>
               </tr>
             </thead>
             <tbody>
               @foreach($reports as $report)
                 <tr>
-                  <td>
-                  {{ $report->title }}
-                  </td>
-                  <td>
-                  {{ $report->detail }}
-                  </td>
-                  <td>
-                    <span class="label {{ $report->status_class }}">{{ $report->status_label}}</span>
-                  </td>
+                  <td>{{ $report->title }}</td>
+                  <td>{{ $report->detail }}</td>
+                  <td><span class="label {{ $report->status_class }}">{{ $report->status_label}}</span></td>
                   <td>{{ $report->formatted_due_date }}</td>
                   <td>
                     <a href="{{ route('reports.edit', ['id' => $report->subject_id, 'report_id' => $report->id]) }}">

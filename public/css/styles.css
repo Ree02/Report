@@ -34,13 +34,14 @@ a.my-navbar-item:hover {
   color: #ffffff;
 }
 
-
+/*
 .table td:nth-child(2),
 .table td:nth-child(3),
 .table td:nth-child(4) {
   white-space: nowrap;
   width: 1px;
 }
+*/
 
 .form-control[disabled],
 .form-control[readonly] {
@@ -74,11 +75,30 @@ span.color {
 span.color-edit { 
   color: #b8b2d6;
 }
-
-
+table {
+  table-layout: fixed;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 tr {
   color: #b8b2d6;
 }
+th:nth-child(1){
+  width: 30%;
+}
+th:nth-child(2){
+  width: 50%;
+}
+th:nth-child(3){
+  width: 13%;
+}
+th:nth-child(4){
+  width: 20%;
+}
+th:nth-child(5){
+  width: 5%;
+}
+
 span.label-danger{
   background-color: #d5848b;
 }
