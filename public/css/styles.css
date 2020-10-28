@@ -34,15 +34,6 @@ a.my-navbar-item:hover {
   color: #ffffff;
 }
 
-/*
-.table td:nth-child(2),
-.table td:nth-child(3),
-.table td:nth-child(4) {
-  white-space: nowrap;
-  width: 1px;
-}
-*/
-
 .form-control[disabled],
 .form-control[readonly] {
   background-color: #fff;
@@ -64,7 +55,7 @@ a.list-group-item:hover {
 a.list-group-item.active,
 a.list-group-item.active:hover {
     background-color:#e8e6f3;
-    border: 0;
+    border: 0 none;
     color: #b8b2d6;
 }
 
@@ -98,6 +89,13 @@ th:nth-child(4){
 th:nth-child(5){
   width: 5%;
 }
+td.subject:nth-child(1){
+  width: 90%;
+}
+td.subject:nth-child(2){
+  width: 10%;
+  vertical-align: middle;
+}
 
 span.label-danger{
   background-color: #d5848b;
@@ -121,11 +119,6 @@ button.btn-ok:hover {
 div.form-group {
   color: #b8b2d6;
 }
-
-div.alert-message {
-  color: #d5848b;
-}
-
 .form-control {
   color: #b8b2d6;
   border-color: #b8b2d6;
