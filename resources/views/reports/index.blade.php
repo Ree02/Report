@@ -18,7 +18,7 @@
             <tbody>
               @foreach($subjects as $subject)
                 <tr>
-                  <td class = "subject">
+                  <td class="subject">
                     <a 
                       href="{{ route('reports.index', ['id' => $subject->id]) }}" 
                       class="list-group-item {{ $current_subject_id === $subject->id ? 'active' : ''}}" style="border: none"
@@ -26,8 +26,8 @@
                       {{ $subject->title }}
                     </a>
                   </td>
-                  <td class = "subject">
-                    <a href="{{ route('reports.index', ['id' => $subject->id]) }}">
+                  <td class="subject">
+                    <a href="{{ route('subjects.edit', ['id' => $subject->id]) }}">
                       <span class="glyphicon glyphicon-pencil color-edit" aria-hidden="true"></span>
                     </a>
                   </td>
