@@ -20,7 +20,8 @@
                   <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $subject->title) }}" autocomplete="off" />
                 </div>
                 <div class="text-right">
-                  <button type="submit" class="btn btn-ok">OK</button>
+                  <button type="submit" class="btn btn-ok" name="delete">削除</button>
+                  <button type="submit" class="btn btn-ok" name="send">OK</button>
                 </div>
               </form>
             </div>
