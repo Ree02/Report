@@ -16,17 +16,24 @@ class ReportController extends Controller
         //全てのフォルダを取得
         $subjects = Subject::all();
         
-        //選ばれたフォルダを取得
-        $current_subject = Subject::find($id);
+        if ($id != 0){
+            //選ばれたフォルダを取得
+            $current_subject = Subject::find($id);
+            //選ばれたフォルダに紐づくタスクを取得
+            $reports = $current_subject->reports()->get();
 
-        //選ばれたフォルダに紐づくタスクを取得
-        $reports = $current_subject->reports()->get();
-
-        return view('reports/index', [
-            'subjects' => $subjects,
-            'current_subject_id' => $id,
-            'reports' => $reports,
-        ]);
+            return view('reports/index', [
+                'subjects' => $subjects,
+                'current_subject_id' => $id,
+                'reports' => $reports,
+            ]);
+        }
+        else {
+            return view('reports/index', [
+                'subjects' => $subjects,
+                'current_subject_id' => 0,
+            ]);
+        }
     }
 
     public function showCreateForm(int $id){

@@ -59,6 +59,7 @@
               </tr>
             </thead>
             <tbody>
+            @if ($current_subject_id != 0)
               @foreach($reports as $report)
                 <tr>
                   <td>{{ $report->title }}</td>
@@ -72,6 +73,7 @@
                   </td>
                 </tr>
               @endforeach
+            @endif
             </tbody>
           </table>
         </div>

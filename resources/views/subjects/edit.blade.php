@@ -21,7 +21,7 @@
                 </div>
                 <div class="text-right">
                   <button type="submit" class="btn btn-ok" name="delete">削除</button>
-                  <button type="submit" class="btn btn-ok" name="send">OK</button>
+                  <button type="submit" class="btn btn-ok" name="send">確定</button>
                 </div>
               </form>
             </div>
