@@ -2,6 +2,11 @@
 
 @section('content')
   <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">おしらせ</div>
+      <div class="panel-body">
+      </div>
+    </div>
     <div class="row">
     <div class="column col-md-4">
       <div class="panel panel-default">
@@ -13,7 +18,6 @@
           <div class="panel-body">
             <div class="text-right">
             </div>
-
           <table class="table">
             <tbody>
               @foreach($subjects as $subject)
@@ -38,7 +42,7 @@
         </div>
       </div>
     </div>
-      <div class="column col-md-8">
+    <div class="column col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">課題
           <a href="{{ route('reports.create', ['id' => $current_subject_id]) }}">
