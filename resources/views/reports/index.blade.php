@@ -5,6 +5,16 @@
     <div class="panel panel-default">
       <div class="panel-heading">おしらせ</div>
       <div class="panel-body">
+        <table class="table">
+          <tbody>
+            @if($current_subject_id == 0)
+              <div class="alert-message">
+                <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                  科目を選択，又は作成してください．
+              </div>
+            @endif
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="row">

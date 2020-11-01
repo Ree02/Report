@@ -127,3 +127,7 @@ div.form-group {
 .form-control:focus {
   border-color: #b8b2d6;
 }
+
+.alert-message {
+  color:  #d5848b;
+}
