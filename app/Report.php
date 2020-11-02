@@ -45,7 +45,7 @@ class Report extends Model
      //日付の表示方式変更
      public function getFormattedDueDateAttribute()
      {
-         return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])
-            ->format('Y/m/d');
+         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['due_date'])
+            ->format('Y/m/d H:i');
      }    
  }

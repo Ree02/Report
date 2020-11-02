@@ -15,7 +15,7 @@ class CreateReportsTable extends Migration
             $table->foreignId('subject_id')->constrained('subjects');  // 外部キーを設定する
             $table->string('title', 20);
             $table->string('detail', 100)->nullable(); // NULLを許可
-            $table->date('due_date');
+            $table->dateTime('due_date');
             $table->integer('status')->default(1);
             $table->softDeletes();
             $table->timestamps();
