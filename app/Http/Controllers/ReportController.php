@@ -13,9 +13,12 @@ class ReportController extends Controller
 {
     public function index(int $id)
     {
-        //全てのフォルダを取得
+        //全ての科目を取得
         $subjects = Subject::all();
-        
+        //全ての課題を取得
+        $deadline_reports = Report::all();
+
+
         if ($id != 0){
             //選ばれたフォルダを取得
             $current_subject = Subject::find($id);
@@ -26,12 +29,14 @@ class ReportController extends Controller
                 'subjects' => $subjects,
                 'current_subject_id' => $id,
                 'reports' => $reports,
+                'deadline_reports' => $deadline_reports,
             ]);
         }
         else {
             return view('reports/index', [
                 'subjects' => $subjects,
                 'current_subject_id' => 0,
+                'deadline_reports' => $deadline_reports,
             ]);
         }
     }

@@ -8,11 +8,16 @@
         <table class="table">
           <tbody>
             @if($current_subject_id == 0)
+            <tr><td>
               <div class="alert-message">
                 <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
                   科目を選択，又は作成してください．
               </div>
+              </td></tr>
             @endif
+            @foreach($deadline_reports as $deadline_report)
+              <tr><td>・{{ $deadline_report->title }}</td></tr>
+            @endforeach
           </tbody>
         </table>
       </div>
