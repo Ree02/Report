@@ -47,5 +47,9 @@ class Report extends Model
      {
          return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['due_date'])
             ->format('Y/m/d H:i');
-     }    
+     }  
+     
+    public function scopeDeadlineDueDate($query){
+        return $query->whereday('due_date', '=', now());
+    }
  }
