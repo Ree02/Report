@@ -55,6 +55,6 @@ class Report extends Model
     }
     // 期限日が現在より上
     public function scopeDeadlineDueDateLessThan($query){
-        return $query->wheredate('due_date', '>', now());
+        return $query->wheredate('due_date', '>=', now());
     }    
  }
