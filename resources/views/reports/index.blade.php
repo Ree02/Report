@@ -16,7 +16,11 @@
               </td></tr>
             @endif
             @foreach($deadline_reports as $deadline_report)
-              <tr><td>・{{ $deadline_report->title }}</td></tr>
+              <tr><td>
+                【残り {{ now()->diffInDays($deadline_report->due_date) }}日
+                {{ (now()->diffInHours($deadline_report->due_date)) - 24 * (now()->diffInDays($deadline_report->due_date)) }}時間】
+                {{ $deadline_report->title }} 
+              </td></tr>
             @endforeach
           </tbody>
         </table>
