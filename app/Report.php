@@ -49,7 +49,12 @@ class Report extends Model
             ->format('Y/m/d H:i');
      }  
      
-    public function scopeDeadlineDueDate($query){
-        return $query->whereday('due_date', '=', now());
+    // 期限日が現在から7日後未満
+    public function scopeDeadlineDueDateGreaterThan($query){
+        return $query->wheredate('due_date', '<', now()->addWeek());
     }
+    // 期限日が現在より上
+    public function scopeDeadlineDueDateLessThan($query){
+        return $query->wheredate('due_date', '>', now());
+    }    
  }

@@ -16,7 +16,7 @@ class ReportController extends Controller
         //全ての科目を取得
         $subjects = Subject::all();
         //全ての課題を取得
-        $deadline_reports = Report::DeadlineDueDate()->get();
+        $deadline_reports = Report::DeadlineDueDateGreaterThan()->DeadlineDueDateLessThan()->get();
 
         if ($id != 0){
             //選ばれたフォルダを取得
