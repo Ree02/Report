@@ -48,7 +48,12 @@ class Report extends Model
          return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['due_date'])
             ->format('Y/m/d H:i');
      }  
-     
+    
+    //課題の状態が「完了」ではないもの取得
+    public function scopeDeadlineStatus($query){
+        return $query->where('status', '!=', '3' );
+    }
+
     // 期限日が現在から7日後未満
     public function scopeDeadlineDueDateGreaterThan($query){
         return $query->wheredate('due_date', '<', now()->addWeek());
