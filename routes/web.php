@@ -37,3 +37,6 @@ Route::post('/subjects/{id}/report/create', 'ReportController@create');
 Route::get('/subjects/{id}/report/{report_id}/edit', 'ReportController@showEditForm')->name('reports.edit');
 //課題編集フォーム
 Route::post('/subjects/{id}/report/{report_id}/edit', 'ReportController@edit');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
