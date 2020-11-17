@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Subject;
 use App\Report;
 use App\Http\Requests\CreateSubject;
+use Illuminate\Support\Facades\Auth;
 
 class SubjectController extends Controller
 {
@@ -23,7 +24,7 @@ class SubjectController extends Controller
         $subject->title = $request->title;
 
         //インスタンスの状態をデータベースに書き込む
-        $subject->save();
+        Auth::user()->subjects()->save($subject);
 
         //課題一覧ページに遷移
         return redirect()->route('reports.index', [

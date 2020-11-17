@@ -8,13 +8,14 @@ use App\Report;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\CreateReport;
 use App\Http\Requests\EditReport;
+use Illuminate\Support\Facades\Auth;
 
 class ReportController extends Controller
 {
     public function index(int $id)
     {
-        //全ての科目を取得
-        $subjects = Subject::all();
+        //ユーザの全ての科目を取得
+        $subjects = Auth::user()->subjects()->get();
         //全ての課題を取得
         $deadline_reports = Report::DeadlineStatus()->DeadlineDueDateGreaterThan()->DeadlineDueDateLessThan()->get();
 
