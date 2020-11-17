@@ -4,14 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ config('app.name') }}</title>
-  @yield('styles')
+  <title>テスト</title>
+  　@if(Auth::check())
+  　　<script>
+    　　document.getElementById('logout').addEventListener('click', function(event) {
+      　　event.preventDefault();
+      　　document.getElementById('logout-form').submit();
+    　　});
+  　</script>
+　@endif
+　@yield('styles')
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <header>
   <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">{{ config('app.name') }}</a>
+    <a class="my-navbar-brand" href="/">テスト</a>
     <div class="my-navbar-control">
       @if(Auth::check())
         <span class="my-navbar-item">ようこそ, {{ Auth::user()->name }}さん</span>

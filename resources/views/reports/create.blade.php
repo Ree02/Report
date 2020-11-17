@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('styles')
 <link rel="stylesheet" type="text/css" media="screen" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
