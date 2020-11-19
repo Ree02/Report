@@ -4,7 +4,7 @@
 
 body {
   background-color: #eff3f6;
-  font-family: 'M PLUS 1p', sans-serif;;
+  font-family: 'M PLUS 1p', sans-serif;
 }
 
 .navbar {
@@ -19,6 +19,8 @@ body {
   justify-content: space-between;
   padding: 0 2%;
   margin-bottom: 3rem;
+  margin-top: -2rem;
+
 }
 
 .my-navbar-brand {
