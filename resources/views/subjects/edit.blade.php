@@ -17,7 +17,7 @@
                     {{$message}}
                   </div>
                   @enderror
-                  <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $subject->title) }}" autocomplete="off" />
+                  <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $subject->title) }}" />
                 </div>
                 <div class="text-right">
                   <button type="submit" class="btn btn-ok" name="send">確定</button>

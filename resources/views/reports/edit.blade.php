@@ -22,7 +22,7 @@
                      {{$message}}
                    </div>
                  @enderror
-                <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $report->title) }}" autocomplete="off" />
+                <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $report->title) }}" />
               </div>
               <div class="form-group">
                 <label for="status">状態</label>
@@ -46,7 +46,7 @@
                    </div>
                  @enderror
                 <div class='input-group date' id='datetimepicker1'>
-                  <input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date', $report->due_date) }}" autocomplete="off" />
+                  <input type="text" class="form-control" name="due_date" id="due_date" value="{{ old('due_date', $report->due_date) }}" />
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -60,7 +60,7 @@
                      {{$message}}
                    </div>
                  @enderror
-                <textarea class="form-control" name="detail" id="detail" autocomplete="off" cols="25" rows="4"/>{{ old('detail', $report->detail) }}</textarea>
+                <textarea class="form-control" name="detail" id="detail" cols="25" rows="4"/>{{ old('detail', $report->detail) }}</textarea>
               </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-ok" name="send">確定</button>

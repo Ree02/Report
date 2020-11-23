@@ -137,3 +137,8 @@ div.form-group {
 .text-center {
   color: #b8b2d6;
 }
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 30px #ffffff inset !important;
+  -webkit-text-fill-color: #b8b2d6 !important;
+}
