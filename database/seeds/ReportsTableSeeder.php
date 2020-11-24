@@ -13,8 +13,11 @@ class ReportsTableSeeder extends Seeder
      */
     public function run()
     {
+        $user = DB::table('users')->first();
+
         foreach (range(1, 3) as $num) {
             DB::table('reports')->insert([
+                'user_id' => $user->id,
                 'subject_id' => 1,
                 'title' => "サンプルタスク {$num}",
                 'detail' => "サンプル詳細 {$num}",

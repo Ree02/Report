@@ -55,6 +55,10 @@ class ReportController extends Controller
         $report->title = $request->title;
         $report->detail = $request->detail;
         $report->due_date = $request->due_date;
+        $report->subject_id = $current_subject->id;
+
+        //インスタンスの状態をデータベースに書き込む
+        Auth::user()->reports()->save($report);
 
         $current_subject->reports()->save($report);
 

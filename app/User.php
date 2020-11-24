@@ -14,6 +14,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Subject');
     }
+    public function reports()
+    {
+        return $this->hasMany('App\Report');
+    }
     /**
      * The attributes that are mass assignable.
      *
