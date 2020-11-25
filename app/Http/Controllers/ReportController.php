@@ -14,10 +14,15 @@ class ReportController extends Controller
 {
     public function index(int $id)
     {
+        //現在認証されているユーザの取得
+        $user = Auth::user();
+        //現在認証されているユーザの取得
+        $user_id = Auth::id();
+
         //ユーザの全ての科目を取得
-        $subjects = Auth::user()->subjects()->get();
-        //全ての課題を取得
-        $deadline_reports = Report::DeadlineStatus()->DeadlineDueDateGreaterThan()->DeadlineDueDateLessThan()->get();
+        $subjects = $user->subjects()->get();
+        //ユーザの〆切の近い課題を取得
+        $deadline_reports = Report::User($user_id)->DeadlineStatus()->DeadlineDueDateGreaterThan()->DeadlineDueDateLessThan()->get();
 
         if ($id != 0){
             //選ばれたフォルダを取得
@@ -49,6 +54,9 @@ class ReportController extends Controller
 
     public function create(int $id, CreateReport $request)
     {
+        //現在認証されているユーザの取得
+        $user = Auth::user();
+
         $current_subject = Subject::find($id);
 
         $report = new Report();
@@ -58,7 +66,7 @@ class ReportController extends Controller
         $report->subject_id = $current_subject->id;
 
         //インスタンスの状態をデータベースに書き込む
-        Auth::user()->reports()->save($report);
+        $user->reports()->save($report);
 
         $current_subject->reports()->save($report);
 

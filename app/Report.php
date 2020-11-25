@@ -49,11 +49,15 @@ class Report extends Model
             ->format('Y/m/d H:i');
      }  
     
+    //ユーザごとの課題を全て取得
+    public function scopeUser($query, $user_id)
+    {
+        return $query->where('user_id', '=', $user_id);
+    }    
     //課題の状態が「完了」ではないもの取得
     public function scopeDeadlineStatus($query){
         return $query->where('status', '!=', '3' );
     }
-
     // 期限日が現在から7日後未満
     public function scopeDeadlineDueDateGreaterThan($query){
         return $query->wheredate('due_date', '<', now()->addWeek());
@@ -61,5 +65,5 @@ class Report extends Model
     // 期限日が現在より上
     public function scopeDeadlineDueDateLessThan($query){
         return $query->wheredate('due_date', '>=', now());
-    }    
+    }
  }
