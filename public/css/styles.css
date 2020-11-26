@@ -134,6 +134,12 @@ div.form-group {
   color:  #d5848b;
 }
 
+.alert-success {
+  color: #b1d7e4;
+  background: #ffffff;
+  padding-bottom: 2%; 
+}
+
 .text-center {
   color: #b8b2d6;
 }
