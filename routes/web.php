@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Auth;
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
+    //ユーザページ
+    Route::get('/user', 'Auth\UserController@showUserForm')->name('users');
+    //ユーザ編集フォーム
+    Route::post('/user', 'Auth\UserController@user');
+
     //課題一覧ページ
     Route::get('/subject/{id}/reports', 'ReportController@index')->name('reports.index');
 
