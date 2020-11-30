@@ -7,9 +7,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
     //ユーザページ
-    Route::get('/user', 'Auth\UserController@showUserForm')->name('users');
+    Route::get('/user', 'Auth\UserController@index')->name('users');
+
+    //ユーザ編集ページ
+    Route::get('user/edit', 'Auth\UserController@showEditForm')->name('users.edit');
     //ユーザ編集フォーム
-    Route::post('/user', 'Auth\UserController@user');
+    Route::post('user/edit', 'Auth\UserController@edit');
 
     //課題一覧ページ
     Route::get('/subject/{id}/reports', 'ReportController@index')->name('reports.index');
