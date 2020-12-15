@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Subject;
 use App\Report;
 use App\Http\Requests\CreateSubject;

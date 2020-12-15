@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Subject;
 use App\Report;
-use Illuminate\Support\Facades\DB;
 use App\Http\Requests\CreateReport;
 use App\Http\Requests\EditReport;
 use Illuminate\Support\Facades\Auth;
@@ -75,7 +73,7 @@ class ReportController extends Controller
         ]);
     }
 
-    public function showEditForm(int $id, int $report_id){
+    public function showEditForm(int $report_id){
         //選ばれた課題を取得
         $report = Report::find($report_id);
 
@@ -84,7 +82,7 @@ class ReportController extends Controller
         ]);
     }
 
-    public function edit(int $id, int $report_id, EditReport $request)
+    public function edit(int $report_id, EditReport $request)
     {
         // 指定したレポートのレコードを取得
         $report = Report::find($report_id);
